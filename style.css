@@ -1,0 +1,199 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-weight: bold;
+    box-sizing: border-box;
+    font-family:  'Roboto Slab', serif;
+}
+:root{
+    --primary:#00b81f;
+    --secondary:#a2ff33;
+    --teritary:#ceff82;
+    --extra:#f3ffe6;
+}
+
+body{
+    background: var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+body::after{
+    content: "";
+    position: absolute;
+    top: 15%;
+    background: var(--secondary);
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    animation: slide-vertical 5s ease-in-out 0s infinite;
+}
+
+body::before{
+    content: "";
+    position: absolute;
+    top:30%;
+    background: linear-gradient(180deg,var(--teritary),var(--extra));
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: slide-vertical 5s ease-in-out 0s infinite;
+}
+
+@keyframes slide-vertical {
+    50%{
+        top: 0%;
+    }
+}
+
+
+#screen{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(145, 255, 145, 0.699);
+    backdrop-filter: blur(2px);
+}
+
+header{
+    position: fixed;
+    top:0px;
+    font-size: 2.5rem;
+    background-image: repeating-linear-gradient(to right, #34ff6a 0%, #FFEE00 100%);
+    background-size: 100%;
+    background-repeat: repeat ;
+
+    -webkit-background-clip:text; 
+    -webkit-text-fill-color: transparent;
+
+    -moz-background-clip: text;
+    -moz-text-fill-color:transparent;
+}
+
+/*Main window*/
+#window{
+    width: 80%;
+    /* background:radial-gradient(var(--secondary),transparent,var(--secondary)); */
+    background: url(../resources/stadium.jpg) #414900 center center/cover;
+    /* background-blend-mode: luminosity; */
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+#window > section{
+    margin: 30px 1px;
+}
+
+
+/* Top/game info */
+#top{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color:black;
+    margin-top:20px;
+}
+
+#top > div{
+   background:rgba(255, 255, 255, 0.253);
+   backdrop-filter: blur(1px);
+    border-radius: 5px;
+    margin: 3px;
+    font-size: 1.1rem;
+    padding: 1px;
+}
+
+#over{
+    color: black;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+}
+
+.box{
+    display: inline-block;
+    color: white;
+    background-color: black;
+    padding: 1px 5px;
+    margin: 1px;
+    text-shadow: none;
+}
+
+/* MID section/display board*/
+#mid{
+    height: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap:wrap ;
+}
+
+#comp,#user{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius:10% ;
+    font-size: 1.3rem;
+}
+
+#comp div,#user div{
+    margin: 5px 10px;
+}
+
+#comp-stat,#user-stat{
+    background-color: white;
+    color: black;
+    padding: 2px;
+}
+
+#result{
+    color: white;
+    text-shadow: 1px 1px 3px black,-2px -2px 5px black;
+    padding: 20px 60px;
+    font-size: 5rem;
+    background-color: black;
+    margin:10px 0px;
+    border-radius: 15px;
+    box-shadow: 2px -2px 16px black;
+}
+
+/* Bottom/user input */
+#bottom{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#bottom button{
+    position: relative;
+    padding: 10px 20px;
+    margin: 10px 20px;
+    color: white;
+    font-size: 1.3rem;
+    background-color: black;
+    border-width: 3px;
+    border-color: #ababab;
+    border-radius: 5px;
+}    
+
+#bottom button:hover{
+    border-radius: 8px;
+    top:2px;
+    box-shadow:none;
+}
+
+/* Utility Classes */
+.box-shadow{
+    box-shadow: 1px 1px 5px 1px black;
+}
+.sharp{
+    text-shadow: -1px 1px 1px rgb(166, 166, 166);
+}
