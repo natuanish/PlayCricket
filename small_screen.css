@@ -1,0 +1,44 @@
+header{
+    font-size: 2rem;
+}
+
+#window{
+    width: 95%;
+}
+
+#window > section{
+    margin: 0px;
+}
+
+#mid{
+    margin: 10px 0px !important;
+    flex-direction: column;
+}
+
+@media  (max-height:500px) {
+    #mid{
+        flex-direction: row;
+    }
+}
+
+#comp{
+    align-self: flex-start;
+}
+
+#user{
+    align-self: flex-end;
+}
+
+#result{
+    font-size: 3rem;
+    padding: 10px 50px;
+}
+
+#comp,#user{
+    font-size: 1.1rem;
+    padding:0px 20px;
+}
+
+#bottom button{
+    padding: 5px 20px;
+}
